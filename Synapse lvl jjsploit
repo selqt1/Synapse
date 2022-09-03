@@ -1,0 +1,165 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+function announce(title,text,time)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = title;
+		Text = text;
+		Duration = time;
+	})
+end
+
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local sideframe = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local fake = Instance.new("Frame")
+local IF = Instance.new("TextButton")
+local DH = Instance.new("TextButton")
+local ESP = Instance.new("TextButton")
+local SA = Instance.new("TextButton")
+local ScriptHub = Instance.new("TextButton")
+local Execute = Instance.new("TextButton")
+local Inject = Instance.new("TextButton")
+local Player = game.Players.LocalPlayer
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+main.BorderColor3 = Color3.fromRGB(39, 39, 39)
+main.Position = UDim2.new(0.196875006, 0, 0.460493833, 0)
+main.Size = UDim2.new(0, 798, 0, 332)
+main.Active = true
+main.Draggable = true
+
+sideframe.Name = "sideframe"
+sideframe.Parent = main
+sideframe.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+sideframe.BorderColor3 = Color3.fromRGB(39, 39, 39)
+sideframe.Position = UDim2.new(0.813283205, 0, 0.0963855386, 0)
+sideframe.Size = UDim2.new(0, 132, 0, 282)
+
+TextLabel.Parent = main
+TextLabel.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+TextLabel.BorderColor3 = Color3.fromRGB(39, 39, 39)
+TextLabel.Size = UDim2.new(0, 798, 0, 21)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Synapse V7 LVL JJSPLOIT"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+
+fake.Name = "fake"
+fake.Parent = main
+fake.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+fake.BorderColor3 = Color3.fromRGB(39, 39, 39)
+fake.Position = UDim2.new(0.0238095243, 0, 0.0963855386, 0)
+fake.Size = UDim2.new(0, 619, 0, 253)
+
+IF.Name = "IF"
+IF.Parent = main
+IF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+IF.Position = UDim2.new(0.825814545, 0, 0.132530123, 0)
+IF.Size = UDim2.new(0, 115, 0, 27)
+IF.Font = Enum.Font.SourceSans
+IF.Text = "Infinite Yeild"
+IF.TextColor3 = Color3.fromRGB(0, 0, 0)
+IF.TextSize = 14.000
+IF.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+DH.Name = "DH"
+DH.Parent = main
+DH.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DH.Position = UDim2.new(0.825814545, 0, 0.256024092, 0)
+DH.Size = UDim2.new(0, 115, 0, 27)
+DH.Font = Enum.Font.SourceSans
+DH.Text = "DarkHub"
+DH.TextColor3 = Color3.fromRGB(0, 0, 0)
+DH.TextSize = 14.000
+DH.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init'),true))()
+end)
+
+ESP.Name = "ESP"
+ESP.Parent = main
+ESP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ESP.Position = UDim2.new(0.825814545, 0, 0.385542154, 0)
+ESP.Size = UDim2.new(0, 115, 0, 27)
+ESP.Font = Enum.Font.SourceSans
+ESP.Text = "ESP"
+ESP.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESP.TextSize = 14.000
+ESP.MouseButton1Click:Connect(function()
+	getgenv().enabled = true --Toggle on/off
+	getgenv().filluseteamcolor = false --Toggle fill color using player team color on/off
+	getgenv().outlineuseteamcolor = false --Toggle outline color using player team color on/off
+	getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
+	getgenv().outlinecolor = Color3.new(1, 1, 1) --Change outline color, no need to edit if using team color
+	getgenv().filltrans = 0 --Change fill transparency
+	getgenv().outlinetrans = 0 --Change outline transparency
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
+end)
+
+SA.Name = "SA"
+SA.Parent = main
+SA.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SA.Position = UDim2.new(0.825814545, 0, 0.512048125, 0)
+SA.Size = UDim2.new(0, 115, 0, 27)
+SA.Font = Enum.Font.SourceSans
+SA.Text = "Silent Aim"
+SA.TextColor3 = Color3.fromRGB(0, 0, 0)
+SA.TextSize = 14.000
+SA.MouseButton1Click:Connect(function()
+	setclipboard("https://discord.gg/kPe2wQzR72")
+	Player:kick("Not Yet Available, Check Discord For Updated, Discord Copied To ClipBoard.")
+end)
+
+ScriptHub.Name = "ScriptHub"
+ScriptHub.Parent = main
+ScriptHub.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+ScriptHub.BorderColor3 = Color3.fromRGB(39, 39, 39)
+ScriptHub.Position = UDim2.new(0.522556365, 0, 0.885542154, 0)
+ScriptHub.Size = UDim2.new(0, 145, 0, 29)
+ScriptHub.Font = Enum.Font.SourceSans
+ScriptHub.Text = "Script Hub"
+ScriptHub.TextColor3 = Color3.fromRGB(0, 0, 0)
+ScriptHub.TextSize = 14.000
+ScriptHub.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/selqt1/Synapse/main/Script%20Hub'),true))()
+end)
+
+Execute.Name = "Execute"
+Execute.Parent = main
+Execute.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Execute.BorderColor3 = Color3.fromRGB(39, 39, 39)
+Execute.Position = UDim2.new(0.0313282907, 0, 0.885542154, 0)
+Execute.Size = UDim2.new(0, 145, 0, 29)
+Execute.Font = Enum.Font.SourceSans
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(0, 0, 0)
+Execute.TextSize = 14.000
+Execute.MouseButton1Click:Connect(function()
+	announce("Synapse LVL JJSPLOIT", "Execute Dont Work Lmao", 5)
+end)
+Inject.Name = "Inject"
+Inject.Parent = main
+Inject.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Inject.BorderColor3 = Color3.fromRGB(39, 39, 39)
+Inject.Position = UDim2.new(0.274436057, 0, 0.885542154, 0)
+Inject.Size = UDim2.new(0, 145, 0, 29)
+Inject.Font = Enum.Font.SourceSans
+Inject.Text = "Inject"
+Inject.TextColor3 = Color3.fromRGB(0, 0, 0)
+Inject.TextSize = 14.000
+Inject.MouseButton1Click:Connect(function()
+	announce("Synapse LVL JJSPLOIT", "Injecting...", 5)
+	wait(5)
+	announce("Synapse LVL JJSPLOIT", "Injected!", 5)
+end)
